@@ -8,7 +8,7 @@ import com.example.appserver.rest.model.DataMessage;
 public class SimpleRestController {
 
   @RequestMapping("/api/message")
-  DataMessage home() {
+  DataMessage getDataMessage() {
     return new DataMessage();
   }
 }
