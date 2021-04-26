@@ -1,7 +1,21 @@
-<div>
-  <h1>HELLO</h1>
-  <div *ngIf="data">
-    ID: {{data.id}} <br>
-    Content: {{data.content}}
+<div class="container">
+  <div class="top-banner" [ngSwitch]="isAuthenticated()">
+  
+    <app-login *ngSwitchCase="false"></app-login>
+    
+    <div *ngSwitchCase="true"> 
+      {{currentLogin}} <button (click)="logout()">Logout</button>
+    </div>
+  
+  </div>
+  <div class="data-section">
+    <h1>HELLO</h1>
+    <div *ngIf="data">
+      ID: {{data.id}} <br>
+      Content: {{data.content}}
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" (click)="getData()">refresh</button>
+    </div>
   </div>
 </div>
