@@ -23,8 +23,15 @@ public class WebConfigurer {
 
     if (allowedOrigins != null && !allowedOrigins.isBlank()) {
       log.info("Registering CORS filter ({})", allowedOrigins);
+
       CorsConfiguration config = new CorsConfiguration();
       config.addAllowedOrigin(allowedOrigins);
+      config.addAllowedHeader("*");
+      config.addAllowedMethod("*");
+      config.addExposedHeader("Authorization");
+      config.addExposedHeader("Link");
+      config.addExposedHeader("X-Total-Count");
+
       source.registerCorsConfiguration("/api/**", config);
     }
 

@@ -16,7 +16,7 @@ export class DataService {
 
   retrieveData() {
     return this.httpClient
-      .get(`${this.apiUrl}/api/message`)
+      .get(`${this.apiUrl}api/message`)
       .pipe( 
         catchError(error => {  return throwError('retrieveData Error.'); }) 
       )
