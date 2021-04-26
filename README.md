@@ -1,7 +1,9 @@
 # spring-boot-with-angular (with Spring Security)
 This is a sample Spring Boot with Angular Project, that implement on top of [spring-boot-with-angular](https://github.com/kritdev/spring-boot-with-angular/tree/spring-boot-with-angular) branch. This project demonstrates the implementation of JWT authentication (stateless, with a token), by using Spring Security.
 
-Note: when run app-server, it will create table structure and default user (user:admin, password:admin) automatically.
+Note: 
+- when run app-server, it will create table structure and default user (user:admin, password:admin) automatically.
+- This project uses [jhipster](https://www.jhipster.tech/) as guild line, and also uses jhipster's generated code. 
 
 ## Instruction to create this sample project
 
