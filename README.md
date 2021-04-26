@@ -8,7 +8,7 @@ This is a sample Spring Boot with Angular Project, that implement on top of [spr
 2. app-server
 - Copy security folder from this branch into the project (src/main/java/com/example/appserver/security)
 - Update pom.xml. Adding dependency as below: -
-`
+```
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -55,14 +55,14 @@ This is a sample Spring Boot with Angular Project, that implement on top of [spr
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-`
+```
 - Update application.properties. Adding these lines:-
-`
+```
 spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/sample
 spring.datasource.username=admin
 spring.datasource.password=admin
-`
+```
 Note: update setting as your mysql configuration
 
 3. app-client 
