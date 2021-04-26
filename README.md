@@ -1,11 +1,15 @@
 # spring-boot-with-angular (with Spring Security)
 This is a sample Spring Boot with Angular Project, that implement on top of [spring-boot-with-angular](https://github.com/kritdev/spring-boot-with-angular/tree/spring-boot-with-angular) branch. This project demonstrates the implementation of JWT authentication (stateless, with a token), by using Spring Security.
 
+Note: when run app-server, it will create table structure and default user (user:admin, password:admin) automatically.
+
 ## Instruction to create this sample project
-1. Prerequisite
+
+#### 1. Prerequisite
 - Checkout [spring-boot-with-angular](https://github.com/kritdev/spring-boot-with-angular/tree/spring-boot-with-angular) branch.
 - Install MySQL Database. And create an empty database (default name is sample). (The database configuration can be changed in app-server/src/main/resources/application.properties)
-2. app-server
+
+#### 2. app-server
 - Copy security folder of this app-server from this branch into the project (src/main/java/com/example/appserver/security)
 - Update pom.xml. Adding dependency as below: -
 ```
@@ -65,7 +69,7 @@ spring.datasource.password=admin
 ```
 Note: update setting as your mysql configuration
 
-3. app-client 
+#### 3. app-client 
 - Copy security folder from app-client folder of this branch into the project (src/app/security)
 - Update AppModule (app.module.ts).
 - Update AppComponent (app.component.ts, app.component.html, and app.component.css)
