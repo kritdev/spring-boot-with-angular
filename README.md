@@ -4,6 +4,19 @@ This is a sample Spring Boot with Angular Project. This sample include: -
 - Create sample angular project (app-client project)
 - Create profile for development and production environment (to configure Cross-origin resource sharing (CORS)) 
 
+## What's this project do
+1. app-server
+- Expose RESTful Rest api: "/api/message". This api will return JSON data: -
+```
+{"id":-1,"content":"This is DataMessage"}
+```
+2. app-client
+- Consume api: "/api/message". And this play data in browser as: -
+```
+ID: -1
+Content: This is DataMessage
+```
+
 ## Instruction to create this sample project
 Note: To clone and build this project, please skip to item 4.
 
