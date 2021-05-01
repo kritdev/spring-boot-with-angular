@@ -56,15 +56,17 @@ Note: To clone and build this project, please skip to item 4.
 
 4. Deploy Application
 	- Copy to file into production environment
-		- [Production Root Folder]/
-			- rest-service-cors-0.0.1-SNAPSHOT.jar
-			- public/
-				- index.html
-				- favicon.ico
-				- main.xxxxxxx.js
-				- polyfills.xxxxxxx.js
-				- runtime.xxxxxxx.js
-				- styles.xxxxxxx.css
+```
+/application folder
+|-- rest-service-cors-0.0.1-SNAPSHOT.jar
+|-- public
+|   |-- index.html
+|   |-- favicon.ico
+|   |-- main.xxxxxxx.js
+|   |-- polyfills.xxxxxxx.js
+|   |-- runtime.xxxxxxx.js
+|   |-- styles.xxxxxxx.css
+```
 
 5. Start Application
 	- cmd (production root folder): java -cp . -jar app-server-0.0.1-SNAPSHOT.jar  --spring.profiles.active=prod
