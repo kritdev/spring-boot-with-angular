@@ -5,13 +5,11 @@ This is a sample Spring Boot with Angular Project. This sample include: -
 - Create profile for development and production environment (to configure Cross-origin resource sharing (CORS)) 
 
 ## What's this project do
-1. app-server
-- Expose RESTful Rest api: "/api/message". This api will return JSON data: -
+1. app-server: Expose RESTful Rest api: "/api/message". This api will return JSON data: -
 ```
 {"id":-1,"content":"This is DataMessage"}
 ```
-2. app-client
-- Consume api: "/api/message". And this play data in browser as: -
+2. app-client: Consume api: "/api/message". And display data in browser as: -
 ```
 ID: -1
 Content: This is DataMessage
@@ -26,10 +24,13 @@ Note: To clone and build this project, please skip to item 4.
 	- test run
 		- cmd (app-server folder): mvnw spring-boot:run
 	- create rest controller
+		- create message class : [DataMessage.java](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-server/src/main/java/com/example/appserver/rest/model/DataMessage.java)
+		- create rest controller class : [SimpleRestController.java](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-server/src/main/java/com/example/appserver/rest/SimpleRestController.java)
 		- (optional) test => cmd: curl http://localhost:8080/api/message
 	- create applicationConfiguration
-		- create src/main/resources/application.properties
-		- create src/main/resources/application-prod.properties
+		- create corsFilter bean: [WebConfigurer](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-server/src/main/java/com/example/appserver/config/WebConfigurer.java)
+		- create default application property file: [application.properties](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-server/src/main/resources/application.properties)
+		- create default application property file: [application-prod.properties](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-server/src/main/resources/application-prod.properties)
 		- (optional) run app-server
 			- cmd (app-server folder): mvnw spring-boot:run
 			- cmd (app-server folder): mvnw spring-boot:run -Dspring-boot.run.profiles=prod
@@ -39,8 +40,13 @@ Note: To clone and build this project, please skip to item 4.
 		- cmd (root folder): ng new app-client
 	- create DataService
 		- cmd (app-client folder): ng g service data
-	- consume DataService
+		- modify [data.service.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/app/data.service.ts)
 	- configuring application environments
+		- modify [environment.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/environments/environment.ts)
+		- modify [environment.prod.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/environments/environment.prod.ts)
+	- consume DataService
+		- modify [app.component.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/app/app.component.ts)
+		- modify [app.component.html](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/app/app.component.html)
 
 3. Build Application (Spring boot and Angular)
 	- app-server
