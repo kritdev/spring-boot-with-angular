@@ -69,5 +69,5 @@ Note: To clone and build this project, please skip to item 4.
 ```
 
 5. Start Application
-	- cmd (production root folder): java -cp . -jar app-server-0.0.1-SNAPSHOT.jar  --spring.profiles.active=prod
+	- cmd (application folder): java -cp . -jar app-server-0.0.1-SNAPSHOT.jar  --spring.profiles.active=prod
 	- browse to : http://[production ip or domain]:8080/
