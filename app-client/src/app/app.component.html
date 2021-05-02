@@ -1,7 +1,37 @@
 <div>
   <h1>HELLO</h1>
-  <div *ngIf="data">
-    ID: {{data.id}} <br>
-    Content: {{data.content}}
+  <div>
+    Content: <input type="text" [(ngModel)]="dataMessage.content"><br>
+    <div [ngSwitch]="hasId()">
+      <div *ngSwitchCase="false">
+        <input type="button" value="save" (click)="saveMessage(dataMessage)">
+      </div>
+      <div *ngSwitchCase="true" style="padding-left: 50px;">
+        <input type="button" value="cancel" (click)="clear()">
+        <input type="button" value="update" (click)="update(dataMessage)">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <input type="button" value="list data" (click)="retrieveData()">
+    <table *ngIf="dataList">
+      <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let item of dataList;">
+        <td>{{item.id}}</td>
+        <td>{{item.content}}</td>
+        <td>
+          <button (click)="get(item)">edit</button>
+        </td>
+        <td>
+          <button (click)="delete(item)">delete</button>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>

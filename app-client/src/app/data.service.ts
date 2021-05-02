@@ -10,15 +10,47 @@ import { environment } from 'src/environments/environment';
 export class DataService {
 
   //consume environment setting
-  apiUrl = environment.apiUrl;
+  apiUrl = environment.apiUrl + 'api/message';
 
   constructor(private httpClient: HttpClient) { }
 
-  retrieveData() {
+  public retrieveData() {
     return this.httpClient
-      .get(`${this.apiUrl}api/message`)
+      .get(`${this.apiUrl}`)
       .pipe( 
-        catchError(error => {  return throwError('retrieveData Error.'); }) 
-      )
+        catchError(error => {  return throwError('RetrieveData fail.'); }) 
+      );
+  }
+
+  public find(id: number) {
+    return this.httpClient
+      .get(`${this.apiUrl}/${id}`)
+      .pipe( 
+        catchError(error => {  return throwError('Find fail.'); }) 
+      );
+  }
+
+  public delete(id: number) {
+    return this.httpClient
+      .delete(`${this.apiUrl}/${id}`)
+      .pipe( 
+        catchError(error => {  return throwError('Delete fail.'); }) 
+      );
+  }
+
+  public create(data) {
+    return this.httpClient
+      .post(`${this.apiUrl}`, data)
+      .pipe( 
+        catchError(error => {  return throwError('Create fail.'); }) 
+      );
+  }
+
+  public update(data) {
+    return this.httpClient
+      .put(`${this.apiUrl}`, data)
+      .pipe( 
+        catchError(error => {  return throwError('Update fail.'); }) 
+      );
   }
 }
