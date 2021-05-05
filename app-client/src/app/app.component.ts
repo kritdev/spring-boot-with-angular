@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DataService } from './data.service';
+import { PdfComponent } from './pdf/pdf.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import { DataService } from './data.service';
 export class AppComponent {
   dataList = null;
   dataMessage = {content:""};
+
+  @ViewChild(PdfComponent)
+  pdfComponent: PdfComponent;
 
   constructor(private dataService: DataService) {
   }
@@ -70,5 +74,9 @@ export class AppComponent {
       result => this.retrieveData(),
       err => alert(err)
     );
+  }
+
+  showReport(){
+    this.pdfComponent.showReport();
   }
 }
