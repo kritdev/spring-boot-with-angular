@@ -39,3 +39,31 @@ Note : to display pdf, binging pdf byte array data with 'src' property of pdf-vi
 - Update [app.module.ts](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report/app-client/src/app/app.module.ts) for importing PdfViewerModule of ng2-pdf-viewer.
 - Update [app.component.ts](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report/app-client/src/app/app.component.ts) and [app.component.html](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report/app-client/src/app/app.component.html) for displaying pdf report.<br>
 Note : using @viewChild for refreshing report data.
+
+<br><br>
+## Another option for displaying pdf in Angular
+For a full-blown PDF viewer in Angular, we can use [ngx-extended-pdf-viewer](https://pdfviewer.net/extended-pdf-viewer/getting-started). the steps are:-
+- Install ngx-extended-pdf-viewer.
+```
+	npm install ngx-extended-pdf-viewer --save
+```
+- Update Angular.json.
+```
+        "assets": [
+          "src/favicon.ico",
+          "src/assets",
+          {
+            "glob": "**/*",
+            "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+            "output": "/assets/"
+          }
+        ],
+```
+- Update app.module.ts to import NgxExtendedPdfViewerModule.
+```
+	import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+```
+- Update pdf.component.html.
+```
+	<ngx-extended-pdf-viewer [src]="pdfSource" useBrowserLocale="true"></ngx-extended-pdf-viewer>
+```
