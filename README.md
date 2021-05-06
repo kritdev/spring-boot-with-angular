@@ -15,4 +15,7 @@ To demonstrate the implementation of JWT authentication (stateless, with a token
 
 
 ### 4. Sample PDF Report
-To demonstrate the generating and displaying PDF report by using [ng2-pdf-viewer](https://www.npmjs.com/package/ng2-pdf-viewer). Please go to [jasper-report](https://github.com/kritdev/spring-boot-with-angular/tree/jasper-report) branch.
+To demonstrate the generating and displaying PDF report. 
+- app-server : Generating PDF report by using [jasper report](https://community.jaspersoft.com/project/jaspersoft-studio).
+- app-client : Displaying PDF report by using [ng2-pdf-viewer](https://www.npmjs.com/package/ng2-pdf-viewer).
+Please go to [jasper-report](https://github.com/kritdev/spring-boot-with-angular/tree/jasper-report) branch.
