@@ -1,5 +1,9 @@
 <div class="container" style="border: solid lightgray 1px;" *ngIf="isShow">
-  <pdf-viewer [src]="pdfSource"
+  <!-- <pdf-viewer [src]="pdfSource"
               [original-size]="false"
-  ></pdf-viewer>
+  ></pdf-viewer> -->
+  <ngx-extended-pdf-viewer
+  [src]="pdfSource"
+  useBrowserLocale="true">
+</ngx-extended-pdf-viewer>
 </div>
