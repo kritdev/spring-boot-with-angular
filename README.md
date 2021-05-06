@@ -12,3 +12,7 @@ To demonstrate the integration of spring data into spring booth with angular pro
 
 ### 3. Sample Spring Security
 To demonstrate the implementation of JWT authentication (stateless, with a token), by using Spring Security. Please go to [spring-security](https://github.com/kritdev/spring-boot-with-angular/tree/spring-security) branch.
+
+
+### 4. Sample PDF Report
+To demonstrate the generating and displaying PDF report by using [ng2-pdf-viewer](https://www.npmjs.com/package/ng2-pdf-viewer). Please go to [jasper-report](https://github.com/kritdev/spring-boot-with-angular/tree/jasper-report) branch.
