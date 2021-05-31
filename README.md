@@ -21,7 +21,7 @@ This is a sample to demonstrate the integration of [jasper report](https://commu
  	  </dependency>
 ```
 - Create jasper report file [sample_report.jrxml](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report/app-server/src/main/resources/reports/sample_report.jrxml).<br>
-Note : this report file create by using jaspersoft studio.
+Note : this report file create by using jaspersoft studio. [Tutorial for creating report in jaspersoft studio.](https://medium.com/@maeluenie/jasper-report-with-spring-boot-service-b896456ec856)
 - Create [ReportResource.java](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report/app-server/src/main/java/com/example/appserver/rest/ReportResource.java) for providing pdf report as byte array in GET method.
 
 #### 3. app-client 
