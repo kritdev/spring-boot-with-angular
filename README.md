@@ -67,3 +67,4 @@ For a full-blown PDF viewer in Angular, we can use [ngx-extended-pdf-viewer](htt
 ```
 	<ngx-extended-pdf-viewer [src]="pdfSource" useBrowserLocale="true"></ngx-extended-pdf-viewer>
 ```
+Please visit this [branch](https://github.com/kritdev/spring-boot-with-angular/tree/ngx-extended-pdf-viewer) for the sample code.
