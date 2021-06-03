@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sample_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0b5765d4-8825-4b53-8c54-770e5d71c805">
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[c2FtcGxlLmFwcF9kYXRhX21lc3NhZ2UgLDE1LDE1LGEyYWUxMTQ5LWVjOWItNGIyYi05YzUxLTli
-YjRjMmJkN2JjYzs=]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="app-server Data Adapter "/>
 	<queryString language="SQL">
 		<![CDATA[SELECT *
 FROM sample.app_data_message]]>
 	</queryString>
 	<field name="id" class="java.lang.Long">
+		<property name="net.sf.jasperreports.javabean.field.property" value="id"/>
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="app_data_message"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
+		<fieldDescription><![CDATA[id]]></fieldDescription>
 	</field>
 	<field name="content" class="java.lang.String">
+		<property name="net.sf.jasperreports.javabean.field.property" value="content"/>
 		<property name="com.jaspersoft.studio.field.name" value="content"/>
 		<property name="com.jaspersoft.studio.field.label" value="content"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="app_data_message"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
+		<fieldDescription><![CDATA[content]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
