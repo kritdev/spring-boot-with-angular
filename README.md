@@ -41,7 +41,21 @@ Note : to display pdf, binging pdf byte array data with 'src' property of pdf-vi
 Note : using @viewChild for refreshing report data.
 
 <br><br>
-## Another option for displaying pdf in Angular
+## option 1: for filling Jasper Report with collection instead of JDBC Connection
+- Jasper Report File: [sample_report.jrxml](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report-with-collection/app-server/src/main/resources/reports/sample_report.jrxml), in each fields, add property name for javabean.
+```
+    <property name="net.sf.jasperreports.javabean.field.property" value="id"/>
+```
+- app-server: [ReportResource.java](https://github.com/kritdev/spring-boot-with-angular/blob/jasper-report-with-collection/app-server/src/main/java/com/example/appserver/rest/ReportResource.java), using JRBeanCollectionDataSource as report data source.
+```
+    List<DataMessage> dataList = dataMessageRepository.findAll();
+    JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(dataList);
+    JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);
+```
+Please visit this [branch](https://github.com/kritdev/spring-boot-with-angular/tree/jasper-report-with-collection) for the sample code.
+
+<br><br>
+## option 2: for displaying pdf in Angular
 For a full-blown PDF viewer in Angular, we can use [ngx-extended-pdf-viewer](https://pdfviewer.net/extended-pdf-viewer/getting-started). the steps are:-
 - Install ngx-extended-pdf-viewer.
 ```
