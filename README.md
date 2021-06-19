@@ -45,6 +45,7 @@ Note: To clone and build this project, please skip to item 4.
 		- modify [environment.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/environments/environment.ts)
 		- modify [environment.prod.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/environments/environment.prod.ts)
 	- consume DataService
+		- modify [app.module.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/app/app.module.ts)	
 		- modify [app.component.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/app/app.component.ts)
 		- modify [app.component.html](https://github.com/kritdev/spring-boot-with-angular/blob/spring-boot-with-angular/app-client/src/app/app.component.html)
 
