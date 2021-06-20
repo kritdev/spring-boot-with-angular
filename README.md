@@ -73,5 +73,5 @@ Note: update setting as your mysql configuration
 
 #### 3. app-client 
 - Copy security folder from app-client folder of this branch into the project (src/app/security)
-- Update AppModule (app.module.ts).
+- Update AppModule ([app.module.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-security/app-client/src/app/app.module.ts)).
 - Update AppComponent (app.component.ts, app.component.html, and app.component.css)
