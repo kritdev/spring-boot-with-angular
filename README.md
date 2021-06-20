@@ -9,7 +9,7 @@ Note:
 
 #### 1. Prerequisite
 - Checkout [spring-boot-with-angular](https://github.com/kritdev/spring-boot-with-angular/tree/spring-boot-with-angular) branch.
-- Install MySQL Database. And create an empty database (default name is sample). (The database configuration can be changed in app-server/src/main/resources/application.properties)
+- Install MySQL Database. And create an empty database (default name is sample). (The database configuration can be changed in app-server/src/main/resources/application.properties). Then fix package name in each files.
 
 #### 2. app-server
 - Copy security folder of this app-server from this branch into the project (src/main/java/com/example/appserver/security)
