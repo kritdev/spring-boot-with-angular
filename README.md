@@ -77,5 +77,38 @@ Note: update setting as your mysql configuration
 npm install --save ngx-webstorage
 ```
 - Copy security folder from app-client folder of this branch into the project (src/app/security)
-- Update AppModule ([app.module.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-security/app-client/src/app/app.module.ts)).
-- Update AppComponent (app.component.ts, app.component.html, and app.component.css)
+- Update AppModule ([app.module.ts](https://github.com/kritdev/spring-boot-with-angular/blob/spring-security/app-client/src/app/app.module.ts)). By adding NgxWebstorageModule in imports. And adding AuthInterceptor, and AuthExpiredInterceptor in providers.
+```
+...
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+...
+import { AuthInterceptor } from './security/interceptor/auth.interceptor';
+import { AuthExpiredInterceptor } from './security/interceptor/auth-expired.interceptor';
+...
+@NgModule({
+  declarations: [
+    ...
+  ],
+  imports: [
+    ...
+    NgxWebstorageModule.forRoot()
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthExpiredInterceptor,
+      multi: true,
+    }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+- Update AppComponent (app.component.ts, app.component.html, and app.component.css) to use login component.
