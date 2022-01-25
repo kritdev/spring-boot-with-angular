@@ -50,8 +50,8 @@
 		  </dependency>
 
 		<dependency>
-			<groupId>font-THSarabunNew</groupId>
-			<artifactId>font-THSarabunNew</artifactId>
+			<groupId>font-AngsanaNew</groupId>
+			<artifactId>font-AngsanaNew</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/reports/font-AngsanaNew.jar</systemPath>
