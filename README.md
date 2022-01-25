@@ -82,3 +82,27 @@ For a full-blown PDF viewer in Angular, we can use [ngx-extended-pdf-viewer](htt
 	<ngx-extended-pdf-viewer [src]="pdfSource" useBrowserLocale="true"></ngx-extended-pdf-viewer>
 ```
 Please visit this [branch](https://github.com/kritdev/spring-boot-with-angular/tree/ngx-extended-pdf-viewer) for the sample code.
+
+<br><br>
+## option 3: for using Font Extension with Jasper Report
+For using Font that is not available to the JVM, we could follow these steps:
+- In jrxml file, set fontName property.
+```
+	<textElement>
+		<font fontName="Angsana New" size="22"/>
+	</textElement>
+```
+- Supply the Font in pom.xml
+  - Create and export the Font Extension by following instructions in this link : [Custom Font with the Font Extension](https://community.jaspersoft.com/wiki/custom-font-font-extension).
+  - Include the exported Font Extension in our project, by adding this section into the pom.xml file. For more information, please visit [stackoverflow : how-to-add-local-jar-files-to-a-maven-project](https://stackoverflow.com/questions/4955635/how-to-add-local-jar-files-to-a-maven-project?rq=1).
+```
+	<dependency>
+		<groupId>font-AngsanaNew</groupId>
+		<artifactId>font-AngsanaNew</artifactId>
+		<version>1.0</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/src/main/resources/reports/font-AngsanaNew.jar</systemPath>
+ 	</dependency>
+```
+note: In the example project, we will use Angsana New font (Thai Font) in Jasper report file.
+Please visit this [branch](https://github.com/kritdev/spring-boot-with-angular/tree/jasper-report-with-collection-thaiFont) for the sample code.
