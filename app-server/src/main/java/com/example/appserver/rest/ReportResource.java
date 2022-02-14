@@ -1,8 +1,8 @@
 package com.example.appserver.rest;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +33,9 @@ public class ReportResource {
   @Autowired
   JdbcTemplate jdbcTemplate;
 
+  @Autowired
+  ResourceLoader resourceLoader;
+
   @GetMapping("/report/pdf")
   public byte[] generateReportpdf(HttpServletResponse response)
       throws IOException, SQLException, JRException {
@@ -41,9 +44,10 @@ public class ReportResource {
     ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     Connection connection = jdbcTemplate.getDataSource().getConnection();
-    File file = ResourceUtils.getFile("classpath:reports/sample_report.jrxml");
-    JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-    
+    InputStream file =
+        resourceLoader.getResource("classpath:reports/sample_report.jrxml").getInputStream();
+    JasperReport jasperReport = JasperCompileManager.compileReport(file);
+
     Map<String, Object> parameters = new HashMap<>();
     parameters.put("REPORT_TITLE", "Data Message List");
 
