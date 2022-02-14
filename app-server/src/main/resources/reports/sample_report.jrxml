@@ -36,7 +36,7 @@ FROM sample.app_data_message]]>
 			<staticText>
 				<reportElement x="80" y="40" width="400" height="30" uuid="a3476954-aafb-4022-aeb8-44ef36f77268"/>
 				<textElement textAlignment="Center">
-					<font fontName="Angsana New" size="22"/>
+					<font fontName="THSarabunNew" size="22"/>
 				</textElement>
 				<text><![CDATA[ทดสอบไทย Font]]></text>
 			</staticText>

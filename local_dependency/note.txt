@@ -1,0 +1,9 @@
+Adding local jar files to a maven project
+--------------------------------------
+mvn install:install-file -Dfile=[local reporitory path]\font-THSarabunNew.jar -DgroupId=font-THSarabunNew -DartifactId=font-THSarabunNew -Dversion=1.0  -Dpackaging=jar
+
+
+reference
+- https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html
+- https://mkyong.com/maven/how-to-include-library-manully-into-maven-local-repository/
+- https://stackoverflow.com/questions/4955635/how-to-add-local-jar-files-to-a-maven-project?rq=1
