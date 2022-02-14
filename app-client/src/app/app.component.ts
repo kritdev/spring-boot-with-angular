@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DataService } from './data.service';
 import { PdfComponent } from './pdf/pdf.component';
+import { ReportService } from './report.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent {
   @ViewChild(PdfComponent)
   pdfComponent: PdfComponent;
 
-  constructor(private dataService: DataService) {
+  constructor(
+    private dataService: DataService,
+    private reportService: ReportService) {
   }
 
   ngOnInit(): void {
@@ -78,5 +81,20 @@ export class AppComponent {
 
   showReport(){
     this.pdfComponent.showReport();
+  }
+
+  downloadReport(){
+    this.reportService.retrieveReport()
+    .subscribe(
+        result => {
+          //Create a Blob from the PDF Stream
+          const file = new Blob([result as any], { type: 'application/pdf' });
+          //Build a URL from the file
+          const fileURL = URL.createObjectURL(file);
+          //Open the URL on new Window
+          window.open(fileURL);
+        },
+        err => alert(err)
+    );
   }
 }
